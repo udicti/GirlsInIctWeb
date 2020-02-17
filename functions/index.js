@@ -1,9 +1,37 @@
-// Create and Deploy Your First BFast Function
+const express = require('express');
+const app = express();
+const path = require('path');
+const router = express.Router();
 
+app.use(express.static(path.join(__dirname, './public')));
 
-exports.helloWorld = {
-    path: '/hello',
-    onRequest: (request, response) => {
-        response.send("Hello from SmartGirls!");
-    }
-};
+router.get('/', (request, response)=>{
+    response.send(`
+    <html>
+        <head>
+            <title>SmartGirl</title>
+            <link href="/style.css" rel="stylesheet"/>
+        </head>
+
+        <body>
+            <div class="container">
+                ${getText('Hello, Josh')}
+            </div>
+        </body>
+    </html>`
+    )}
+);
+
+app.use('/', router)
+
+exports.ui = {
+    path: '/',
+    onRequest: app
+}
+
+function getText(message){
+    return `
+    <span>${message}</span>
+    `
+}
+
