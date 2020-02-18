@@ -12,13 +12,6 @@ html {
     background-color: white;
 }
 
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-}
-
 .app-bar {
     display: flex;
     flex-direction: row;
@@ -28,7 +21,7 @@ html {
 }
 
 .app-bar-brand {
-    font-family: Roboto;
+    font-family: Roboto, sans-serif;
     font-style: normal;
     font-weight: bold;
     font-size: 24px;
@@ -38,7 +31,7 @@ html {
 }
 
 .app-bar-item {
-    font-family: Roboto;
+    font-family: Roboto, sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 18px;
@@ -46,4 +39,81 @@ html {
     /* identical to box height */
 
     color: #000000;
+}
+
+.footer-wrapper {
+    /*height: 378px;*/
+}
+
+.footer-wrapper-bottom {
+    height: 100px;
+    background: #0798EA;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*padding: 8px;*/
+}
+
+.footer-wrapper-top {
+    /*height: 278px;*/
+    padding-top: 24px;
+    padding-bottom: 24px;
+    color: white;
+
+    background: #3CB9FF;
+}
+
+.footer-wrapper-bottom-text {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 28px;
+
+    color: #FFFFFF;
+
+}
+
+.meet-team-wrapper {
+    background-color: white;
+    padding-top: 48px;
+    padding-bottom: 48px;
+}
+
+.meet-team-line{
+    border: 1px solid #009FF9;
+    margin-left: 5px;
+    margin-right: 5px;
+    height: 2px;
+    /*width: 100%;*/
+}
+
+
+
+
+.headerIntro{
+    width: 100%;
+    height: 500px;
+    padding: 0 100px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(255, 255, 255, 0.1)), url("images/headerintrobg.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: table;
+    color: #FFFFFF;
+}
+.header-text{
+    display: table-cell;
+    vertical-align: middle;
+}
+.headerIntro a{
+    background-color: #009FF9;
+    padding: 15px 30px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #FFFFFF;
+    font-weight: bold;
+
+}
+.headerIntro p{
+    padding: 20px 0;
+    font-weight: bold;
 }
