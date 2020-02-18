@@ -1,6 +1,8 @@
 const {NewsAndEvents} = require("./news-events");
 const {MeetTeam} = require("./meet-team");
-const {AppBar, HeaderIntro, Footer} = require("../common");
+const {WhatWeDo} = require("./what-we-do");
+const {AppBar,HeaderIntro, Footer} = require("../common");
+
 
 
 /**
@@ -12,6 +14,7 @@ const Landing = () => {
     return `
         ${AppBar()}
         ${HeaderIntro()}
+        ${WhatWeDo()}
         ${NewsAndEvents()}
         ${MeetTeam()}
         ${Footer()}
