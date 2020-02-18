@@ -33,6 +33,19 @@ const AppBar = () => {
     `);
 };
 
+const HeaderIntro = () => {
+    return `
+   
+    <div class="headerIntro"> 
+    <div class="header-text">
+        <h1>SMART GIRLS IN ICT</h1>
+        <p>Supporting and Empowering Girls and young women in ICT movement </p>
+        <a href="#">SEE OUR ACTIVITIES</a></div>
+    </div>
+    
+    `
+};
+
 const Footer = () => {
     return (`
         <div class="footer-wrapper">
@@ -88,5 +101,6 @@ const Footer = () => {
     `);
 };
 
+module.exports.HeaderIntro = HeaderIntro;
 module.exports.Footer = Footer;
 module.exports.AppBar = AppBar;

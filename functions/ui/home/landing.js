@@ -1,5 +1,5 @@
 const {MeetTeam} = require("./meet-team");
-const {AppBar, Footer} = require("../common");
+const {AppBar,HeaderIntro, Footer} = require("../common");
 
 /**
  * Header view
@@ -9,6 +9,7 @@ const {AppBar, Footer} = require("../common");
 const Header = () => {
     return `
         ${AppBar()}
+        ${HeaderIntro()}
     `
 };
 
