@@ -17,25 +17,31 @@ const WhatWeDo = () => {
                     more women with ICT skills can help fill this gap. This means investing in girls and young women today. 
                     </p>
                 </div>
-                <div class="row d-flex justify-content-center align-items-center" style="margin-top: 40px;">
+                <div class="row what-we-do d-flex justify-content-center align-items-center">
                   
                   
                  <div class="col-3 text-center">
+                 <a href="#">
                   <div class=" what-we-do-1 jumbotron">
                     <p class="lead">Empowering youth women to be aware with ICT </p>
                   </div>
+                  </a>
                   <p class="h4">Capacity Building</p>
                 </div>
                  <div class="col-3 text-center">
-                  <div class=" what-we-do-2 jumbotron">
+                  <a href="#">
+                    <div class=" what-we-do-2 jumbotron">
                     <p class="lead">Empowering youth women to be aware with ICT </p>
                   </div>
+                  </a>
                   <p class="h4">Mentorship</p>
                 </div>
                  <div class="col-3 text-center">
+                 <a href="#">
                   <div class=" what-we-do-3 jumbotron">
                     <p class="lead">Empowering youth women to be aware with ICT </p>
                   </div>
+                  </a>
                   <p class="h4">Competitions</p>
                 </div>
                 </div>
