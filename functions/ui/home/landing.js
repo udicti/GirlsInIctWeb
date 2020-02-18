@@ -5,6 +5,7 @@ const {AppBar,HeaderIntro, Footer} = require("../common");
  * Header view
  * @returns {string}
  * @constructor
+ *
  */
 const Header = () => {
     return `
