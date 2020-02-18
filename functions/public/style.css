@@ -78,6 +78,11 @@ html {
     padding-top: 48px;
     padding-bottom: 48px;
 }
+.news-and-events-wrapper{
+    background: #E5E5E5;
+    padding-top: 48px;
+    padding-bottom: 48px;
+}
 
 .meet-team-line{
     border: 1px solid #009FF9;

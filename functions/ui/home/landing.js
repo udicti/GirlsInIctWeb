@@ -1,17 +1,7 @@
+const {NewsAndEvents} = require("./news-events");
 const {MeetTeam} = require("./meet-team");
-const {AppBar,HeaderIntro, Footer} = require("../common");
+const {AppBar, HeaderIntro, Footer} = require("../common");
 
-/**
- * Header view
- * @returns {string}
- * @constructor
- */
-const Header = () => {
-    return `
-        ${AppBar()}
-        ${HeaderIntro()}
-    `
-};
 
 /**
  * Landing page view
@@ -20,7 +10,9 @@ const Header = () => {
  */
 const Landing = () => {
     return `
-        ${Header()}
+        ${AppBar()}
+        ${HeaderIntro()}
+        ${NewsAndEvents()}
         ${MeetTeam()}
         ${Footer()}
     `
