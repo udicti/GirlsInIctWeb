@@ -12,12 +12,12 @@ html {
     background-color: white;
 }
 
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-}
+/*.container {*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*    min-height: 100vh;*/
+/*}*/
 
 .app-bar {
     display: flex;
@@ -28,7 +28,7 @@ html {
 }
 
 .app-bar-brand {
-    font-family: Roboto;
+    font-family: Roboto, sans-serif;
     font-style: normal;
     font-weight: bold;
     font-size: 24px;
@@ -38,7 +38,7 @@ html {
 }
 
 .app-bar-item {
-    font-family: Roboto;
+    font-family: Roboto, sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 18px;
@@ -46,4 +46,36 @@ html {
     /* identical to box height */
 
     color: #000000;
+}
+
+.footer-wrapper {
+    height: 378px;
+}
+
+.footer-wrapper-bottom {
+    height: 100px;
+    background: #0798EA;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*padding: 8px;*/
+}
+
+.footer-wrapper-top {
+    /*height: 278px;*/
+    padding-top: 24px;
+    padding-bottom: 24px;
+    color: white;
+
+    background: #3CB9FF;
+}
+
+.footer-wrapper-bottom-text {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 28px;
+
+    color: #FFFFFF;
+
 }
