@@ -27,4 +27,4 @@ jobs:
       env:
         CI: true
         BFAST_TOKEN: ${{ secrets.TOKEN }}
-        PROJECT: smartgirls
+        PROJECT_ID: smartgirls
