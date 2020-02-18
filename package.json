@@ -5,10 +5,9 @@
   "scripts": {
     "start": "bfast fs serve"
   },
-  "engines": {
-  },
+  "engines": {},
   "dependencies": {
-    "express": "^4.17.1",
+    "express": "^4.17.1"
   },
   "devDependencies": {
     "bfast-tools": "^0.3.3"
