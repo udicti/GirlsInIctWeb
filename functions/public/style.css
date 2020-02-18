@@ -120,7 +120,7 @@ html {
 
 .jumbotron p{
     color: white;
-    font-weight: bold;
+    font-weight: 500;
 }
 .what-we-do-1{
     background-image: linear-gradient(to right, rgba(1, 131, 251, 0.66), rgba(1, 131, 251, 0.66)), url("images/what-we-do-1.png");
