@@ -35,14 +35,14 @@ const AppBar = () => {
 
 const HeaderIntro = () => {
     return `
-   
     <div class="headerIntro"> 
     <div class="header-text">
-        <h1>SMART GIRLS IN ICT</h1>
-        <p>Supporting and Empowering Girls and young women in ICT movement </p>
-        <a href="#">SEE OUR ACTIVITIES</a></div>
+       <div class="container">
+            <h1>SMART GIRLS IN ICT</h1>
+            <p>Supporting and Empowering Girls and young women in ICT movement </p>
+            <a href="#">SEE OUR ACTIVITIES</a></div>
+        </div>
     </div>
-    
     `
 };
 
