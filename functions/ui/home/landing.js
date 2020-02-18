@@ -1,4 +1,5 @@
 const {MeetTeam} = require("./meet-team");
+const {WhatWeDo} = require("./what-we-do");
 const {AppBar,HeaderIntro, Footer} = require("../common");
 
 /**
@@ -22,6 +23,7 @@ const Header = () => {
 const Landing = () => {
     return `
         ${Header()}
+        ${WhatWeDo()}
         ${MeetTeam()}
         ${Footer()}
     `
