@@ -1,4 +1,5 @@
-const {AppBar, Footer} = require("./common");
+const {MeetTeam} = require("./meet-team");
+const {AppBar, Footer} = require("../common");
 
 /**
  * Header view
@@ -19,6 +20,7 @@ const Header = () => {
 const Landing = () => {
     return `
         ${Header()}
+        ${MeetTeam()}
         ${Footer()}
     `
 };

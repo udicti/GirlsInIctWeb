@@ -4,6 +4,7 @@
     "**/node_modules/**",
     "**/specs/**",
     "**/public/**",
+    "**/ui/**",
     "**/*.specs.js"
   ]
 }

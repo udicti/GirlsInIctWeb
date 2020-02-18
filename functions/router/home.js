@@ -1,5 +1,5 @@
 const express = require('express');
-const {Landing} = require("../ui/landing");
+const {Landing} = require("../ui/home/landing");
 const homeRouter = express.Router();
 
 homeRouter.get('/', (request, response) => {
