@@ -1,17 +1,15 @@
-const {AppBar} = require("./common");
+const {AppBar, Footer} = require("./common");
 
 const Header = () => {
     return `
         ${AppBar()}
-        <div style="height: 500px;">
-            
-        </div>
     `
 };
 
 const Landing = () => {
     return `
         ${Header()}
+        ${Footer()}
     `
 };
 
