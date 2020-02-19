@@ -1,4 +1,4 @@
-const NewArticle = () => {
+const EditArticle = () => {
     return (`
             <div class="container" style="margin: 50px auto;">
             
@@ -8,7 +8,7 @@ const NewArticle = () => {
                     <label for="title" class="h4">Title</label>
                     <input type="text" class="form-control "  placeholder="Title" id="title" >
                  </div>
-                 <button class="btn btn-primary btn-lg" type="submit" style="margin: auto 50px 15px auto; padding: 0 20px">Save</button>
+                 <button class="btn btn-primary btn-lg" type="submit" style="margin: auto 50px 15px auto; padding: 0 20px">Update</button>
               </div>
              
              <div class="form-group">
@@ -30,4 +30,4 @@ const NewArticle = () => {
     `)
 };
 
-module.exports.NewArticle = NewArticle;
+module.exports.EditArticle = EditArticle;

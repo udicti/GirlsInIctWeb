@@ -4,6 +4,7 @@ const path = require('path');
 const homeRouter = require('./router/home');
 const articleRouter = require('./router/article');
 const createArticleRouter = require('./router/create-article');
+const updateArticleRouter = require('./router/update-article');
 
 app.use(express.static(path.join(__dirname, './public')));
 
@@ -25,5 +26,12 @@ app.use('/article/create', createArticleRouter);
 
 exports.createArticleRouter = {
     path: '/article/create',
+    onRequest: app
+};
+
+app.use('/article/update', updateArticleRouter);
+
+exports.updateArticleRouter = {
+    path: '/article/update',
     onRequest: app
 };
