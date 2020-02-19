@@ -8,7 +8,8 @@
   },
   "engines": {},
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "parse": "^2.11.0"
   },
   "devDependencies": {
     "bfast-tools": "^0.3.3"
