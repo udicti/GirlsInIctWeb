@@ -1,6 +1,6 @@
 const MeetTeam = () => {
     return (`
-        <div class="meet-team-wrapper">
+        <div id="team" class="meet-team-wrapper">
             <div class="container">
                 <div class="d-flex flex-row flex-nowrap btn-block align-items-center justify-content-center">
                     <span class="meet-team-line flex-grow-1"></span>
