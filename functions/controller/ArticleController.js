@@ -1,3 +1,7 @@
+const Parse = require('parse/node');
+Parse.initialize('smartgirls', '');
+Parse.serverURL = 'https://smartgirls-daas.bfast.fahamutech.com';
+
 class ArticleController {
 
     /**
@@ -10,7 +14,9 @@ class ArticleController {
      */
     async saveArticle(article) {
         try {
-            return 'Done';
+            const ArticleObject = Parse.Object.extend('articles', null, null);
+            const articleObject = new ArticleObject();
+            return await articleObject.save(article);
         } catch (e) {
             throw e;
         }

@@ -19,8 +19,7 @@ articleRouter.get('/create', (request, response) => {
 articleRouter.post('/create', (request, response) => {
     const article = request.body;
     articleController.saveArticle(article).then(_ => {
-        response.query = article;
-        response.redirect('/admin/article/create?title=Hello&content=<p>hello</p>');
+        response.redirect('/admin/article');
     }).catch(reason => {
         console.log(reason);
         response.redirect('/admin/article/create');
