@@ -16,7 +16,7 @@ const ArticleTabs = () => {
               <div class="tab-pane fade show active container" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
                               <div style="">
 
-                <button type="button" class="btn btn-primary float-right" style="margin: 10px">New Article</button>
+                <a href="/admin/article/create" type="button" class="btn btn-primary float-right" style="margin: 10px">New Article</a>
                 <table class="table">
                   <thead class="bg-primary text-white">
                     <tr>

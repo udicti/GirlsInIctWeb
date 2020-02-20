@@ -22,4 +22,20 @@ homeRouter.get('/', (request, response) => {
     `)
 });
 
+homeRouter.get('/login', (request, response) => {
+    response.send(`
+        <body>Login page</body>
+    `)
+});
+
+homeRouter.get('/login/1', (request, response) => {
+    response.cookie('uid', 'jioyg875iu');
+    response.redirect('/admin/article');
+});
+
+homeRouter.get('/logout', (request, response) => {
+    response.cookies.set('uid', {expires: Date.now()});
+    response.redirect('/');
+});
+
 module.exports = homeRouter;
