@@ -10,6 +10,7 @@ html {
     margin: 0;
     padding: 0;
     background-color: white;
+    scroll-behavior: smooth;
 }
 
 .app-bar {
@@ -17,7 +18,7 @@ html {
     flex-direction: row;
     padding: 24px;
     background: #FFFFFF;
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
 }
 
 .app-bar-brand {
@@ -150,4 +151,13 @@ html {
     background-size: cover;
     background-repeat: no-repeat;
     border-radius: 5px;
+}
+
+
+.events-image{
+    margin: auto;
+    height: 250px;
+    border-radius: 10px;
+    background-size: cover;
+    background-repeat: no-repeat;
 }

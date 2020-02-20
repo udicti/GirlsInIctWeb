@@ -1,14 +1,16 @@
 {
   "name": "functions",
   "version": "0.1.0",
-  "description": "Cloud Functions for BFast",
+  "description": "smart girl in ict platform",
   "scripts": {
     "start": "bfast fs serve",
     "deploy": "bfast functions deploy --token ${BFAST_TOKEN} --projectId ${PROJECT_ID}"
   },
   "engines": {},
   "dependencies": {
-    "express": "^4.17.1"
+    "cookie-parser": "^1.4.4",
+    "express": "^4.17.1",
+    "parse": "^2.11.0"
   },
   "devDependencies": {
     "bfast-tools": "^0.3.3"
