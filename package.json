@@ -1,7 +1,7 @@
 {
   "name": "functions",
   "version": "0.1.0",
-  "description": "Cloud Functions for BFast",
+  "description": "smart girl in ict platform",
   "scripts": {
     "start": "bfast fs serve"
   },
