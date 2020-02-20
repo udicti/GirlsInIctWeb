@@ -1,25 +1,10 @@
 const express = require('express');
+const {AppHtmlTemplate} = require("../ui/common/AppHtmlTemplate");
 const {Landing} = require("../ui/home/landing");
 const homeRouter = express.Router();
 
 homeRouter.get('/', (request, response) => {
-    response.send(`
-        <!Doctype>
-        <html lang="en">
-           <head>
-               <title>SmartGirl</title>
-               <link rel="stylesheet" href="/bootstrap4.css">
-               <link href="/roboto.css" rel="stylesheet">
-               <link rel="stylesheet" href="/style.css">
-           </head>
-           <body>
-                ${Landing()}
-                <script src="/js/jquery.js"></script>
-                <script src="/js/popper.js"></script>
-                <script src="/js/bootstrap.js"></script>
-            </body>
-        </html>
-    `)
+    response.send(AppHtmlTemplate(Landing()));
 });
 
 homeRouter.get('/login', (request, response) => {

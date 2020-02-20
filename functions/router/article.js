@@ -1,32 +1,16 @@
 const express = require('express');
-const {ArticleHome} = require("../ui/article/article-home");
-const articleRouter = express.Router();
+const {AllArticlesView} = require("../ui/article/articles");
+const {ViewArticle} = require("../ui/article/article-read");
+const {AppHtmlTemplate} = require("../ui/common/AppHtmlTemplate");
+const newsAndEventsRouter = express.Router();
 
-articleRouter.get('/', (request, response) => {
-    response.send(`
-        <!Doctype>
-        <html lang="en">
-           <head>
-               <title>SmartGirl</title>
-               <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
-               <link rel="stylesheet" href="/bootstrap4.css">
-               <link href="/roboto.css" rel="stylesheet">
-               <link rel="stylesheet" href="/style.css">
-           </head>
-           <body>
-                ${ArticleHome()}
-                <script src="/js/jquery.js"></script>
-                <script src="/js/popper.js"></script>
-                <script src="/js/bootstrap.js"></script>
-                <script>
-                 $(function () {
-                    $('[data-toggle="tooltip"]').tooltip()
-                  })
-                </script>
-            </body>
-        </html>
-    `)
+newsAndEventsRouter.get('/', (request, response) => {
+    response.send(AppHtmlTemplate(AllArticlesView()));
 });
 
-module.exports = articleRouter;
+newsAndEventsRouter.get('/:articleId', (request, response) => {
+    const articleId = request.params.articleId;
+    response.send(AppHtmlTemplate(ViewArticle(articleId)));
+});
+
+module.exports = newsAndEventsRouter;

@@ -1,4 +1,7 @@
-const EditArticle = () => {
+const {Footer} = require("../common");
+const {AppBarAdmin} = require("../common");
+
+const _ArticleAdminEdit = () => {
     return (`
             <div class="container" style="margin: 50px auto;">
             
@@ -14,6 +17,7 @@ const EditArticle = () => {
              <div class="form-group">
              <textarea cols="80" id="editor1" name="editor1" rows="10">            
             </textarea>
+            <script src="https://cdn.ckeditor.com/4.13.1/standard-all/ckeditor.js"></script>
               <script>
                 CKEDITOR.replace('editor1', {
                   extraPlugins: 'autogrow',
@@ -30,4 +34,12 @@ const EditArticle = () => {
     `)
 };
 
-module.exports.EditArticle = EditArticle;
+const ArticleAdminEdit = () => {
+    return (`
+        ${AppBarAdmin()}
+        ${_ArticleAdminEdit()}
+        ${Footer()}
+    `)
+};
+
+module.exports.EditArticle = ArticleAdminEdit;
