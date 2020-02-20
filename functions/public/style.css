@@ -10,6 +10,7 @@ html {
     margin: 0;
     padding: 0;
     background-color: white;
+    scroll-behavior: smooth;
 }
 
 .app-bar {
@@ -150,4 +151,13 @@ html {
     background-size: cover;
     background-repeat: no-repeat;
     border-radius: 5px;
+}
+
+
+.events-image{
+    margin: auto;
+    height: 250px;
+    border-radius: 10px;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
