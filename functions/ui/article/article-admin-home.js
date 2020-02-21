@@ -50,24 +50,25 @@ const _ArticleHomeBody = (data, err) => {
             </div>
                             
                 <!-- Modal -->
-                <div class="modal fade" id="confirmDelete" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+               <!--  <div class="modal fade" id="confirmDelete" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                   <div class="modal-dialog" role="document">
                     <div class="modal-content">
                       <div class="modal-body text-center">
                         <p><i class="material-icons text-warning display-4">warning</i></p>
                         <p class="text-black-50" style="font-size: 24px">Confirm deleting this article?</p>
-                        
+
                         <div>
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                            <button type="button" class="btn btn-primary">Delete</button>
+                            <a href="/admin/article/delete/" class="btn btn-primary" onclick="">Delete</a>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
+                </div>-->
             </div>
     `
 };
+
 
 const _showErr = (err) => {
     if (err) {
@@ -85,6 +86,23 @@ const _showErr = (err) => {
     }
 };
 
+const convertMonth = (month) => {
+    switch (month) {
+        case 0: return "Jan";
+        case 1: return "Feb";
+        case 2: return "Mar";
+        case 3: return "Apr";
+        case 4: return "May";
+        case 5: return "Jun";
+        case 6: return "Jul";
+        case 7: return "Aug";
+        case 8: return "Sep";
+        case 9: return "Oct";
+        case 10: return "Nov";
+        case 11: return "Dec";
+    }
+};
+
 /**
  *
  * @param data {{
@@ -93,23 +111,27 @@ const _showErr = (err) => {
  *     objectId: string
  * }[]}
  */
+
 const getTableRows = (data) => {
+
     let rows = '';
     let i = 1;
     data.forEach(article => {
+         let date = new Date(article.updatedAt);
+         console.log(date.getFullYear());
         rows = rows + `
             <tr>
               <td><p>${i++}</p></td>
               <td>
                 <p>${article.title}</p>
                </td>
-              <td><p>${article.updatedAt}</p></td>
+              <td><p> ${convertMonth(date.getMonth())} ${date.getDate()}, ${date.getFullYear()} </p></td>
               <td>
                 <p>
                 <a target="_blank" href="/article/${article.objectId}" data-toggle="tooltip" data-placement="top"   title="view" style="padding: 10px 5px"><i class="material-icons text-primary">remove_red_eye</i></a>
                 <a href="/admin/article/update/${article.objectId}" data-toggle="tooltip" data-placement="top"   title="edit" style="padding: 10px 5px"><i class="material-icons text-success">edit</i></a>
-                <span data-toggle="modal" data-target="#confirmDelete" >
-                <a href="/admin/article/delete/${article.objectId}" class="delete-tooltip" data-toggle="tooltip" data-placement="top" title="delete" style="padding: 10px 5px">
+                <span data-toggle="modal" data-target="#confirmDelete${article.objectId}" data-id="${article.objectId}">
+                <a href="#" class="delete-tooltip" data-toggle="tooltip" data-placement="top" title="delete" style="padding: 10px 5px">
                     <i class="material-icons text-danger">delete</i>
                  </a>
                 </span>

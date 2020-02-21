@@ -45,7 +45,7 @@ class ArticleController {
 
     async deleteArticle(objectId) {
         try {
-            throw 'f';
+//            throw 'f';
             const ArticleObject = Parse.Object.extend('articles', null, null);
             const  query = new Parse.Query(ArticleObject);
             const oldObject = await query.get(objectId);
