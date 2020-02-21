@@ -1,9 +1,15 @@
 const {AppBarAdmin, Footer} = require('../common');
 
-const _ArticleHomeBody = () => {
+/**
+ *
+ * @param data {[]}
+ * @param err {string}
+ * @returns {string}
+ * @private
+ */
+const _ArticleHomeBody = (data, err) => {
     return `
     <div class="container" style="margin: 50px auto;">
-           
             <div >
                <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
                   <li class="nav-item">
@@ -13,8 +19,9 @@ const _ArticleHomeBody = () => {
                     <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Gallery</a>
                   </li>
                 </ul>
+           
+           ${_showErr(err)}
             
-            <div class="tab-content" id="pills-tabContent">
               <div class="tab-pane fade show active container" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
                               <div style="">
 
@@ -29,25 +36,7 @@ const _ArticleHomeBody = () => {
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <td><p>000</p></td>
-                      <td>
-                        <p>the Bird jsdfksdghasd asdfjksdgyasdf asdfhasdfas d sd fadasdfasdfasdfasd as as dfasdfasdfa  asfd
-                        </p>
-                       </td>
-                      <td><p>Feb,20 2020</p></td>
-                      <td>
-                        <p>
-                        <a target="_blank" href="/article/7869987iuiuy" data-toggle="tooltip" data-placement="top"   title="view" style="padding: 10px 5px"><i class="material-icons text-primary">remove_red_eye</i></a>
-                        <a href="/admin/article/update/69865tut" data-toggle="tooltip" data-placement="top"   title="edit" style="padding: 10px 5px"><i class="material-icons text-success">edit</i></a>
-                        <span data-toggle="modal" data-target="#confirmDelete" >
-                        <a href="#" class="delete-tooltip" data-toggle="tooltip" data-placement="top" title="delete" style="padding: 10px 5px">
-                            <i class="material-icons text-danger">delete</i>
-                         </a>
-                        </span>
-                        </p>
-                      </td>
-                    </tr>
+                    ${getTableRows(data)}
                   </tbody>
                 </table>
               </div>
@@ -80,10 +69,62 @@ const _ArticleHomeBody = () => {
     `
 };
 
-const ArticleAdminHome = () => {
+const _showErr = (err) => {
+    if (err) {
+        return `
+         <div class="tab-content" id="pills-tabContent">
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+              ${err}
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+        `
+    } else {
+        return '';
+    }
+};
+
+/**
+ *
+ * @param data {{
+ *     title: string,
+ *     updatedAt: Date,
+ *     objectId: string
+ * }[]}
+ */
+const getTableRows = (data) => {
+    let rows = '';
+    let i = 1;
+    data.forEach(article => {
+        rows = rows + `
+            <tr>
+              <td><p>${i++}</p></td>
+              <td>
+                <p>${article.title}</p>
+               </td>
+              <td><p>${article.updatedAt}</p></td>
+              <td>
+                <p>
+                <a target="_blank" href="/article/${article.objectId}" data-toggle="tooltip" data-placement="top"   title="view" style="padding: 10px 5px"><i class="material-icons text-primary">remove_red_eye</i></a>
+                <a href="/admin/article/update/${article.objectId}" data-toggle="tooltip" data-placement="top"   title="edit" style="padding: 10px 5px"><i class="material-icons text-success">edit</i></a>
+                <span data-toggle="modal" data-target="#confirmDelete" >
+                <a href="/admin/article/delete/${article.objectId}" class="delete-tooltip" data-toggle="tooltip" data-placement="top" title="delete" style="padding: 10px 5px">
+                    <i class="material-icons text-danger">delete</i>
+                 </a>
+                </span>
+                </p>
+              </td>
+            </tr>
+        `
+    });
+    return rows;
+};
+
+const ArticleAdminHome = (data, err) => {
     return `
         ${AppBarAdmin()}
-        ${_ArticleHomeBody()}
+        ${_ArticleHomeBody(data, err)}
         ${Footer()}
     `
 };
