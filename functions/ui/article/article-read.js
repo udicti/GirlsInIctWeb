@@ -54,12 +54,13 @@ const _ViewArticleBody = (articleId) => {
                     </p>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-lg-7 row" style="margin: auto">
-              <!--  <div class="row">
+              <div class="col-lg-7" style="margin: auto">
                     <h6>More to Read</h6>
-                    <hr >
-                </div>-->
+                    <span class="flex-grow-1"></span>
+                    <hr style=" background: black">
+                </div>
+                <div class="row">
+                <div class="col-lg-7 row" style="margin: auto">                
                 <div class="card border-light" style="width: 18rem; margin: auto">
                   <img class="card-img-top" src="/images/read-article.png"  alt="Card image cap">
                   <div class="card-img-overlay text-white " style="height: 9rem; background: linear-gradient(90deg, rgba(0, 0, 0, 0.66) 0%, rgba(1, 131, 251, 0) 101.83%);">
