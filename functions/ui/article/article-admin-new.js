@@ -14,7 +14,7 @@ const _NewArticleBody = () => {
                      Save Article
                      </button>
                      <div id="spin"  class="text-info font-weight-bold" style="display: none">
-                        <div v-if="saveProgress" class="spinner-border text-info" style="margin: 0 10px"></div>
+                        <span v-if="saveProgress"><div class="spinner-border text-info" style="margin: 0 10px"></div>saving...</span>
                      </div>
                 </div>
                      
@@ -101,7 +101,7 @@ const _NewArticleBody = () => {
                             }).then(value => {
                                 this.saveProgress= false;
                                 console.log(value.data);
-                                location.replace('/admin/article');
+                                location.replace('/admin/article/create');
                             }).catch(reason => {
                                 this.saveProgress= false;
                                 this.hasError = reason.response.data.message;

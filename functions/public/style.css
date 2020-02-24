@@ -151,12 +151,3 @@ html {
     background-repeat: no-repeat;
     border-radius: 5px;
 }
-
-
-.events-image{
-    margin: auto;
-    height: 250px;
-    border-radius: 10px;
-    background-size: cover;
-    background-repeat: no-repeat;
-}

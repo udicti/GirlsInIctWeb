@@ -24,9 +24,12 @@ const _ArticleHomeBody = (data, err) => {
             
               <div class="tab-pane fade show active container" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
                               <div style="">
-
+                   
                 <a href="/admin/article/create" class="btn btn-primary float-right" style="margin: 10px">New Article</a>
-                <table class="table">
+                 <div id="spin"  class="text-info font-weight-bold " style="visibility: hidden">
+                        <div class="spinner-border text-info" style="margin: 0 10px"></div>deleting...
+                     </div>
+                 <table class="table">
                   <thead class="bg-primary text-white">
                     <tr>
                       <th scope="col">No.</th>
@@ -80,6 +83,7 @@ const _showErr = (err) => {
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
+          
         `
     } else {
         return '';
@@ -103,6 +107,8 @@ const convertMonth = (month) => {
     }
 };
 
+
+
 /**
  *
  * @param data {{
@@ -111,14 +117,11 @@ const convertMonth = (month) => {
  *     objectId: string
  * }[]}
  */
-
 const getTableRows = (data) => {
-
     let rows = '';
     let i = 1;
     data.forEach(article => {
          let date = new Date(article.updatedAt);
-         console.log(date.getFullYear());
         rows = rows + `
             <tr>
               <td><p>${i++}</p></td>
@@ -131,7 +134,7 @@ const getTableRows = (data) => {
                 <a target="_blank" href="/article/${article.objectId}" data-toggle="tooltip" data-placement="top"   title="view" style="padding: 10px 5px"><i class="material-icons text-primary">remove_red_eye</i></a>
                 <a href="/admin/article/update/${article.objectId}" data-toggle="tooltip" data-placement="top"   title="edit" style="padding: 10px 5px"><i class="material-icons text-success">edit</i></a>
                 <span data-toggle="modal" data-target="#confirmDelete${article.objectId}" data-id="${article.objectId}">
-                <a href="#" class="delete-tooltip" data-toggle="tooltip" data-placement="top" title="delete" style="padding: 10px 5px">
+                <a href="/admin/article/delete/${article.objectId}" onclick=" if (confirm('delete')) { if (document.readyState === 'complete') {document.getElementById('spin').setAttribute('style', 'visibility: visible')} return true;} else {return false;}" class="delete-tooltip" data-toggle="tooltip" data-placement="top" title="delete" style="padding: 10px 5px">
                     <i class="material-icons text-danger">delete</i>
                  </a>
                 </span>
