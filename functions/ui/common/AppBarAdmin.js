@@ -24,7 +24,7 @@ const AppBarAdmin = () => {
             </ul>
             
            
-            <button class="btn btn-outline-primary my-2 my-sm-0" type="button" style="margin-left: 10px">Logout</button>
+            <a href="/logout" class="btn btn-outline-primary my-2 my-sm-0" type="button" style="margin-left: 10px">Logout</a>
           </div>
           
         </nav>
