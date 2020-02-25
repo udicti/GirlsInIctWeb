@@ -7,9 +7,9 @@ const newsAndEventsRouter = express.Router();
 const articleController = new ArticleController;
 newsAndEventsRouter.get('/', (request, response) => {
     let skip = parseInt(request.query.skip);
-    articleController.getArticles(2, skip, '').then(articleData => {
+    articleController.getArticles(20, skip, '').then(articleData => {
         articleController.getTotalArticles().then(totalArticles => {
-            response.send(AppHtmlTemplate(AllArticlesView(articleData, totalArticles)));
+            response.send(AppHtmlTemplate(AllArticlesView(articleData, totalArticles, skip)));
         }).catch(reason => {
             response.status(400).json(reason);
         });

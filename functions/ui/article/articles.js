@@ -21,11 +21,13 @@ const getImageUrl = (data) => {
     const image = data.toString().slice(start, end);
     return image;
 };
+let noOfPages = 0;
 const getSkipValue = (data) => {
-    let noOfPages = parseInt(data / 20);
+     noOfPages = parseInt(data / 20);
     if (data > noOfPages * 20){
-        noOfPages += 1;
+       return noOfPages += 1;
     }
+
 };
 const getNewsEventData = (data) => {
     let rows = '';
@@ -55,29 +57,52 @@ const getNewsEventData = (data) => {
     });
     return rows;
 };
-const allArticlesBody = (articleData, totalArticles) => {
+const allArticlesBody = (articleData, totalArticles, skip) => {
     return (`
         <div class="headerIntro" style="height: 250px; background: linear-gradient(to right, rgba(1, 131, 251, 1), rgba(2, 255, 255, 0.5));"> 
-            <div class="header-text">
+            <div class="header-text ">
                <div class="container">
                     <h1>NEWS AND EVENTS</h1>
                     </div>
             </div>
         </div>
        <div class="container">
-              ${getNewsEventData(articleData)}
+            ${getNewsEventData(articleData)}
         </div>
        <div class="container">
             <nav aria-label="Page navigation example">
-              <ul class="pagination justify-content-center">
-                <li class="page-item disabled">
-                  <a class="page-link" href="#" tabindex="-1">Previous</a>
-                </li>
-                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                <li class="page-item">
-                  <a class="page-link" href="#">Next</a>
+              <ul class="pagination nav-pills justify-content-center">
+                   <script>
+                    const j = ${getSkipValue(totalArticles)};
+                    for (let i = 0; i < j; i++){
+                    console.log(i);
+                    const nextSkip = 20 * i;
+                    const acivePage = ${skip} / 20;
+                    const page = i + 1;
+                    if (acivePage > 2) {
+                        const startPagination = acivePage - 2;
+                        const endPagination = acivePage + 2;
+                        if (i >= startPagination && i <= endPagination) {
+                            if (acivePage === i) {
+                                 document.write('<li class="page-item active"><a class="page-link" href="/article?skip='+ nextSkip 
+                                +'" style="border-radius:50%; margin: auto 5px;">' + page + '</a></li>');
+                                } else {
+                                document.write('<li class="page-item "><a class="page-link" href="/article?skip='+ nextSkip 
+                                    +'" style="border-radius:50%; margin: auto 5px;">' + page + '</a></li>');
+                            }
+                        } 
+                    } else {
+                      if (acivePage === i) {
+                             document.write('<li class="page-item active"><a class="page-link" href="/article?skip='+ nextSkip 
+                            +'" style="border-radius:50%; margin: auto 5px;">' + page + '</a></li>');
+                      } else {
+                            document.write('<li class="page-item "><a class="page-link" href="/article?skip='+ nextSkip 
+                                +'" style="border-radius:50%; margin: auto 5px;">' + page + '</a></li>');
+                      }
+                    }
+                    
+                    }
+                </script>
                 </li>
               </ul>
             </nav>
@@ -85,10 +110,10 @@ const allArticlesBody = (articleData, totalArticles) => {
     `);
 };
 
-const AllArticlesView = (articleData, totalArticles) => {
+const AllArticlesView = (articleData, totalArticles, skip) => {
     return (`
         ${AppBar()}
-        ${allArticlesBody(articleData, totalArticles)}
+        ${allArticlesBody(articleData, totalArticles, skip)}
         ${Footer()}
     `);
 };

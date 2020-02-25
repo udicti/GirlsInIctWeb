@@ -99,9 +99,27 @@ const _ViewArticleBody = (articleData, readMoreData) => {
                 <div class="col-lg-7" style="margin: 30px auto"> 
                     <p class="text-black-50">Helpful</p>
                     <p>
-                        <a class="btn text-white" style="background: #009FF9; margin-right:20px; width: 100px;">YES</a>
-                        <a class="btn text-white" style="background: #009FF9; width: 100px;">NO</a>
+                        <a class="btn text-white  align-items-center" data-toggle="modal" data-target="#exampleModal" style="background: #009FF9; margin-right:20px; width: 100px;">YES
+                            <i class="material-icons ">thumb_up_alt</i>
+                        </a>
+                        <a class="btn text-white" data-toggle="modal" data-target="#exampleModal" style="background: #009FF9; width: 100px;">NO
+                           <i class="material-icons">thumb_down_alt</i>
+                        </a>
                     </p>
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                          <div class="modal-body d-flex flex-column flex-center">
+                            <p class="modal-title" id="exampleModalLabel" style="margin: auto">
+                                <i class="material-icons font-weight-bold text-success">done</i>
+                            </p>
+                            <p  style="margin: 20px auto">Thankyou for your feedback.</p>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal" style="margin: auto">Close</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                 </div>
             </div>
               <div class="col-lg-7" style="margin: auto">
