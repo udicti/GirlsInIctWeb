@@ -5,16 +5,16 @@ const Footer = () => {
             <div class="container">
                 <div class="row">
                     <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-12">
-                        <div style="margin-top: 8px">
-                            <h6>Resources</h6>
+                        <div style="margin: 8px auto">
+                            <h5>Resources</h5>
                             <span class="btn-block">Gallery</span>
                             <span class="btn-block">News & Events</span>
                         </div>
                     </div>
                     
                     <div class="col-12 col-xl-3 col-lg-3 col-sm-12 col-md-6">
-                        <div style="margin-top: 8px">
-                            <h6>About</h6>
+                        <div style="margin: 8px auto">
+                            <h5>About</h5>
                             <a style="color: white" href="#" class="btn-block">UDICT</a>
                             <a style="color: white" href="#" class="btn-block">DLab</a>
                             <a style="color: white" href="#" class="btn-block">Y4C</a>
@@ -22,16 +22,16 @@ const Footer = () => {
                     </div>
                     
                     <div class="col-12 col-xl-3 col-lg-3 col-sm-12 col-md-6">
-                       <div style="margin-top: 8px">
-                            <h6>Contacts</h6>
+                       <div style="margin: 8px auto">
+                            <h5>Contacts</h5>
                             <span class="btn-block">+255XXXXXXXX</span>
                             <span class="btn-block">CoICT B109 Science</span>
                         </div>
                     </div>
                     
                     <div class="col-12 col-xl-3 col-lg-3 col-sm-12 col-md-6">
-                       <div style="margin-top: 8px">
-                            <h6>Subscribe</h6>
+                       <div style="margin: 8px auto">
+                            <h5>Subscribe</h5>
                             <form>
                                 <div class="form-group">
                                     <input placeholder="Enter email" class="form-control" type="email">

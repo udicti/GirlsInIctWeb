@@ -7,14 +7,23 @@ const AuthMiddleware = class {
     }
 
     isAdmin(request, response, next) {
+        const user =  Parse.User.signUp('','',{
+            role:'admin'
+        }).then(function (value) {
+
+        });
+        // user.setUsername('user1');
+        // user.setPassword('user1');
+        // user.
         const cookie = request.cookies;
+        console.log(cookie);
         if (cookie && cookie.uid) {
             next();
-            // verifyId(cookie.uid).then(_ => {
-            //     next();
-            // }).catch(_ => {
-            //     response.redirect('/login');
-            // })
+            verifyId(cookie.uid).then(_ => {
+                next();
+            }).catch(_ => {
+                response.redirect('/login');
+            })
         } else {
             response.redirect('/login');
         }
@@ -28,6 +37,7 @@ const AuthMiddleware = class {
  */
 async function verifyId(uid) {
     try {
+       // const user = await Parse.User.logIn("admin", "admin");
         throw 'I do know you'
     } catch (e) {
         throw e;

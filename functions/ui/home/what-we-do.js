@@ -21,7 +21,7 @@ const WhatWeDo = () => {
                 <div class="row what-we-do d-flex justify-content-center align-items-center">
                   
                   
-                 <div class="col-3 text-center">
+                 <div class="col-md-3 text-center">
                  <a href="#">
                   <div class=" what-we-do-1 jumbotron">
                     <p class="lead">Empowering youth women to be aware with ICT </p>
@@ -29,7 +29,7 @@ const WhatWeDo = () => {
                   </a>
                   <p class="h4">Capacity Building</p>
                 </div>
-                 <div class="col-3 text-center">
+                 <div class="col-md-3 text-center">
                   <a href="#">
                     <div class=" what-we-do-2 jumbotron">
                     <p class="lead">Empowering youth women to be aware with ICT </p>
@@ -37,7 +37,7 @@ const WhatWeDo = () => {
                   </a>
                   <p class="h4">Mentorship</p>
                 </div>
-                 <div class="col-3 text-center">
+                 <div class="col-md-3 text-center">
                  <a href="#">
                   <div class=" what-we-do-3 jumbotron">
                     <p class="lead">Empowering youth women to be aware with ICT </p>
