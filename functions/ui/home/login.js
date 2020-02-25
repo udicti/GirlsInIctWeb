@@ -14,13 +14,13 @@ const Login = () => {
                 <div class="col-md-5 row form-col d-flex justify-content-center align-items-center" style="margin: auto; height: 100vh;">
                   <div>
                      <img src="/images/smart.png" width="250px" style="margin: 10px auto">
-                    <form style="padding: 0; ">
+                    <form action="/login"method="post" style="padding: 0; ">
                     <p class="text-center text-black-50" style="margin: 0 auto 70px auto">Please login in your account</p>
                   <div class="form-group">
-                    <input type="text" name="username" class="form-control" id="exampleInputEmail1" placeholder="Username" style="margin: 30px auto">
+                    <input required type="text" name="username" class="form-control" id="exampleInputEmail1" placeholder="Username" style="margin: 30px auto">
                   </div>
                   <div class="form-group">
-                    <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password" style="margin: 30px auto">
+                    <input required type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password" style="margin: 30px auto">
                   </div>
                   <button type="submit" class="btn btn-info" style="width: 250px;
                    background: linear-gradient(90deg, rgba(0, 159, 249, 0.84) 11.81%, rgba(241, 36, 36, 0.84) 110.8%); margin-top: 70px">Login</button>
