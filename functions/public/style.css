@@ -151,3 +151,18 @@ html {
     background-repeat: no-repeat;
     border-radius: 5px;
 }
+
+
+
+
+@media (max-width: 576px) {
+    #image-col {
+        margin-top: -100vh;
+        visibility: hidden;
+    }
+    .form-col input{
+        margin: 10px auto;
+    }
+
+
+}

@@ -2,6 +2,7 @@ const express = require('express');
 const {ArticleController} = require("../controller/ArticleController");
 const {AppHtmlTemplate} = require("../ui/common/AppHtmlTemplate");
 const {Landing} = require("../ui/home/landing");
+const {Login} = require("../ui/home/login");
 const homeRouter = express.Router();
 const articleController = new ArticleController();
 homeRouter.get('/', (request, response) => {
@@ -13,9 +14,7 @@ homeRouter.get('/', (request, response) => {
 });
 
 homeRouter.get('/login', (request, response) => {
-    response.send(`
-        <body>Login page</body>
-    `)
+    response.send(AppHtmlTemplate(Login()));
 });
 
 homeRouter.get('/login/1', (request, response) => {

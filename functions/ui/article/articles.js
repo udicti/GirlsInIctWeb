@@ -79,7 +79,7 @@ const allArticlesBody = (articleData, totalArticles, skip) => {
                     const nextSkip = 20 * i;
                     const acivePage = ${skip} / 20;
                     const page = i + 1;
-                    if (acivePage > 2) {
+                    if (acivePage > 2 && j > 5) {
                         const startPagination = acivePage - 2;
                         const endPagination = acivePage + 2;
                         if (i >= startPagination && i <= endPagination) {
