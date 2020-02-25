@@ -7,14 +7,7 @@ const AuthMiddleware = class {
     }
 
     isAdmin(request, response, next) {
-        const user =  Parse.User.signUp('','',{
-            role:'admin'
-        }).then(function (value) {
 
-        });
-        // user.setUsername('user1');
-        // user.setPassword('user1');
-        // user.
         const cookie = request.cookies;
         console.log(cookie);
         if (cookie && cookie.uid) {
