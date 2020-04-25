@@ -16,6 +16,14 @@ const AppHtmlTemplate = (content) => {
                <link rel="stylesheet" href="/style.css">
                <link href="https://fonts.googleapis.com/icon?family=Material+Icons"  rel="stylesheet">
            </head>
+           <style>
+                html{
+                    font-family: Roboto, sans-serif!important;
+                }
+                body{
+                    font-family: Roboto, sans-serif!important;
+                }
+            </style>
            <body>
                 ${content}
                 <script src="/js/jquery.js"></script>

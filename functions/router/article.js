@@ -5,6 +5,7 @@ const {ViewArticle} = require("../ui/article/article-read");
 const {AppHtmlTemplate} = require("../ui/common/AppHtmlTemplate");
 const newsAndEventsRouter = express.Router();
 const articleController = new ArticleController;
+
 newsAndEventsRouter.get('/', (request, response) => {
     let skip = parseInt(request.query.skip);
     articleController.getArticles(20, skip, '').then(articleData => {

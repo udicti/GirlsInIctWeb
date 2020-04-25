@@ -15,9 +15,9 @@ const AppBarAdmin = () => {
               <li class="nav-item">
                 <a class="nav-link" href="/#team">Team</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Gallery</a>
-              </li>
+<!--              <li class="nav-item">-->
+<!--                <a class="nav-link" href="#">Gallery</a>-->
+<!--              </li>-->
                <li class="nav-item">
                 <a class="nav-link" href="#">News & Events</a>
               </li>

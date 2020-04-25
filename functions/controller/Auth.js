@@ -28,7 +28,7 @@ const AuthMiddleware = class {
      */
     static async userLogin(username, password) {
         try {
-            return await Parse.User.logIn(username, password);
+            return await BFast.auth.logIn(username, password);
         } catch (e) {
             throw e;
         }
@@ -42,9 +42,7 @@ const AuthMiddleware = class {
  */
 async function verifyId(uid) {
     try {
-        const query = new Parse.Query('_User');
-        const response = await query.get(uid);
-        const user = response.toJSON();
+        const user = await BFast.database.collection('_User').get(uid);
         if (!user) {
             throw 'No such user';
         }

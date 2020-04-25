@@ -26,21 +26,16 @@ class ArticleController {
      */
     async getTotalArticles() {
         try {
-            const ArticleObject = Parse.Object.extend('articles', null, null);
-            const query = new Parse.Query(ArticleObject);
-            const response = await query.count();
-            console.log(response);
-            return JSON.parse(JSON.stringify(response));
-        }catch (e) {
+            return await BFast.database.collection('articles').query().count();
+        } catch (e) {
             throw e;
         }
     };
+
     async getArticles(size, skip, objectId) {
         try {
-            const ArticleObject = Parse.Object.extend('articles', null, null);
-            const query = new Parse.Query(ArticleObject);
-            const queryCount = new Parse.Query(ArticleObject);
-            const total = queryCount.count();
+            const query = BFast.database.collection('articles').query();
+            const total = await BFast.database.collection('articles').query().count();
             query.include(['updatedAt', 'title', 'objectId']);
             query.notEqualTo('objectId', objectId);
             query.descending('updatedAt');
@@ -48,57 +43,42 @@ class ArticleController {
             query.skip(skip);
             const response = await query.find();
             return JSON.parse(JSON.stringify(response), JSON.parse(JSON.stringify(total)));
-        }catch (e) {
+        } catch (e) {
             throw e;
         }
     }
 
     async viewArticle(objectId) {
         try {
-            const ArticleObject = Parse.Object.extend('articles', null, null);
-            const  query = new Parse.Query(ArticleObject);
-            const articleData = await query.get(objectId);
-            return JSON.parse(JSON.stringify(articleData));
-        }catch (e) {
+            return await BFast.database.collection('articles').get(objectId);
+        } catch (e) {
             throw e;
         }
     }
+
     async getArticleById(objectId) {
         try {
-            const ArticleObject = Parse.Object.extend('articles', null, null);
-            const  query = new Parse.Query(ArticleObject);
-            const articleData = await query.get(objectId);
-            return JSON.parse(JSON.stringify(articleData));
-        }catch (e) {
+            return await BFast.database.collection('articles').get(objectId);
+        } catch (e) {
             throw e;
         }
     }
+
     async updateArticle(objectId, title, content) {
         try {
-            console.log(title);
-            const ArticleObject = Parse.Object.extend('articles', null, null);
-            const  query = new Parse.Query(ArticleObject);
-            query.get( objectId).then(object => {
-                    console.log(object.title);
-                    object.set("title", title);
-                    object.set("content", content);
-                    return object.save();
-                },
-                 (error) => {
-                    throw error;
+            return await BFast.database.collection('articles').update(objectId, {
+                title,
+                content
             });
-        }catch (e) {
+        } catch (e) {
             throw e;
         }
     }
+
     async deleteArticle(objectId) {
         try {
-            const ArticleObject = Parse.Object.extend('articles', null, null);
-            const  query = new Parse.Query(ArticleObject);
-            const oldObject = await query.get(objectId);
-            const response = await oldObject.destroy();
-            return response;
-        }catch (e) {
+            return await BFast.database.collection('articles').delete(objectId);
+        } catch (e) {
             throw e;
         }
     }

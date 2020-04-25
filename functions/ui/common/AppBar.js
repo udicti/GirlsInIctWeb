@@ -15,9 +15,9 @@ const AppBar = () => {
               <li class="nav-item">
                 <a class="nav-link" href="/#team">Team</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Gallery</a>
-              </li>
+<!--              <li class="nav-item">-->
+<!--                <a class="nav-link" href="#">Gallery</a>-->
+<!--              </li>-->
                <li class="nav-item">
                 <a class="nav-link" href="/article?skip=0">News & Events</a>
               </li>

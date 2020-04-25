@@ -28,7 +28,7 @@ homeRouter.post('/login', (request, response) => {
         AuthMiddleware.userLogin(username, password).then(value => {
             const user = JSON.parse(JSON.stringify(value));
             // console.log(user);
-            response.cookie('uid',user.objectId, { maxAge: 3600000});
+            response.cookie('uid', user.objectId, {maxAge: 3600000});
             response.redirect('/admin/article');
         }).catch(reason => {
             console.log(reason);
