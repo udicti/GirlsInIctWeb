@@ -13,7 +13,6 @@
     "express": "^4.17.1"
   },
   "devDependencies": {
-    "bfast-tools": "^0.6.3"
   },
   "private": true
 }
