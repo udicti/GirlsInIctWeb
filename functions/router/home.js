@@ -9,7 +9,7 @@ const authMiddleware = new AuthMiddleware();
 const articleController = new ArticleController();
 
 homeRouter.get('/', (request, response) => {
-    articleController.getArticles(2, 0, '').then(articleData => {
+    articleController.getArticles(5, 0, '').then(articleData => {
         response.send(AppHtmlTemplate(Landing(articleData)));
     }).catch(reason => {
         response.status(400).json(reason);
