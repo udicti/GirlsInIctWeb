@@ -19,7 +19,7 @@ const AppBar = () => {
                 <a class="nav-link" href="#">Gallery</a>
               </li>
                <li class="nav-item">
-                <a class="nav-link" href="/article">News & Events</a>
+                <a class="nav-link" href="/article?skip=0">News & Events</a>
               </li>
             </ul>
             

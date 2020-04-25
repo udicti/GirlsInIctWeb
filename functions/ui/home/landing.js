@@ -8,12 +8,12 @@ const {AppBar, HeaderIntro, Footer} = require("../common");
  * @returns {string}
  * @constructor
  */
-const Landing = () => {
+const Landing = (articleData) => {
     return `
         ${AppBar()}
         ${HeaderIntro()}
         ${WhatWeDo()}
-        ${NewsAndEvents()}
+        ${NewsAndEvents(articleData)}
         ${MeetTeam()}
         ${Footer()}
     `

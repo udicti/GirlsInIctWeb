@@ -1,2 +1,2 @@
-# SmartGirlsInICT BFast Functions
-API services for smartgirlz mobile and website
+# Girls In ICT
+Platform for girls in ICT

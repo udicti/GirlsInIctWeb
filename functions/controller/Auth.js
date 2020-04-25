@@ -7,14 +7,30 @@ const AuthMiddleware = class {
     isAdmin(request, response, next) {
         const cookie = request.cookies;
         if (cookie && cookie.uid) {
-            next();
-            // verifyId(cookie.uid).then(_ => {
-            //     next();
-            // }).catch(_ => {
-            //     response.redirect('/login');
-            // })
+            verifyId(cookie.uid).then(user => {
+                request.admin = user;
+                next();
+            }).catch(_ => {
+                console.log(_);
+                response.redirect('/login');
+            })
         } else {
+            console.log('no cookie');
             response.redirect('/login');
+        }
+    }
+
+    /**
+     *
+     * @param username {string}
+     * @param password {string}
+     * @returns {Promise<>}
+     */
+    static async userLogin(username, password) {
+        try {
+            return await Parse.User.logIn(username, password);
+        } catch (e) {
+            throw e;
         }
     }
 };
@@ -22,14 +38,25 @@ const AuthMiddleware = class {
 /**
  *
  * @param uid {string}
- * @returns {Promise<void>}
+ * @returns {Promise<>}
  */
 async function verifyId(uid) {
     try {
-        throw 'I do know you'
+        const query = new Parse.Query('_User');
+        const response = await query.get(uid);
+        const user = response.toJSON();
+        if (!user) {
+            throw 'No such user';
+        }
+        if (user.role === 'admin') {
+            return user;
+        } else {
+            throw 'User is not admin';
+        }
     } catch (e) {
         throw e;
     }
 }
+
 
 module.exports.AuthMiddleware = AuthMiddleware;
