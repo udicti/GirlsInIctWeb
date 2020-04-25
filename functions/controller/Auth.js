@@ -1,6 +1,4 @@
-const Parse = require('parse/node');
-Parse.initialize('smartgirls', '');
-Parse.serverURL = 'https://smartgirls-daas.bfast.fahamutech.com';
+const {BFast} = require('bfastnode');
 
 const AuthMiddleware = class {
     constructor() {

@@ -1,6 +1,4 @@
-const Parse = require('parse/node');
-Parse.initialize('smartgirls', '');
-Parse.serverURL = 'https://smartgirls-daas.bfast.fahamutech.com';
+const {BFast} = require('bfastnode');
 
 class ArticleController {
 
@@ -14,9 +12,7 @@ class ArticleController {
      */
     async saveArticle(article) {
         try {
-            const ArticleObject = Parse.Object.extend('articles', null, null);
-            const articleObject = new ArticleObject();
-            return await articleObject.save(article);
+            return await BFast.database.collection('articles').save(article);
         } catch (e) {
             throw e;
         }
