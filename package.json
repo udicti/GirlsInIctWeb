@@ -8,7 +8,7 @@
   },
   "engines": {},
   "dependencies": {
-    "bfastnode": "^1.2.3",
+    "bfastnode": "^4.5.3",
     "cookie-parser": "^1.4.4",
     "express": "^4.17.1"
   },
